@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../public/assets/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div id="myModal" class="modal-box">
+            <div class="modal-content">
+                <span id="close">x</span>
+                <h1>WELCOME!</h1>
+                <form action="/register" method="post">
+                    <div class="name input-cnt">
+                        <div class="image-name"></div>
+                        <img src="../public/assets/image/icon3.png" alt="">
+                        <input type="text" name="userName" placeholder="Username">
+                    </div>
+
+                    <div class="email input-cnt">
+                        <img src="../public/assets/image/icon4.png" alt="">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="pw input-cnt">
+                        <img src="../public/assets/image/icon5.png" alt="">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="cont-strong">
+                        <span class="strong"></span>
+                        <span class="strong"></span>
+                        <span class="strong"></span>
+                        <span class="strong"></span>
+                        <span> Too weak </span>
+                    </div>
+                    <div class="check">
+                        <input type="Checkbox" id="done">
+                        <label for="done">By checking this box, i agree to <span>terms of service</span>.</label>
+                    </div>
+
+                    <div class="agree">
+                        <button type="submit">SIGN UP</button>
+                        <a href="login.html">Already a member?</a>
+                    </div>
+                </form>
+            </div>  
+        </div>
+
+        {{#if messages.active}}
+        <div class="failed-login">
+            <div class="failed-content">
+                <span id="close-txt">X</span>
+                <img src="../public/assets/image/failed.png" alt="">
+                <div class="failed-message">
+                    <h1 class="head-txt">
+                      {{#if messages.failed}}!!Ooooooppsssss{{/if}}
+                      {{#if messages.success}}!!Congratss{{/if}}
+                    </h1>
+                    <h4>
+                      {{#if messages.failed}}{{messages.failed}}{{/if}}
+                      {{#if messages.success}}{{messages.success}}{{/if}}
+                    </h4>
+                    <h4>{{#if messages.failed}}Dont have account?{{/if}} <a href="" class="register">{{#if messages.failed}} register now{{/if}}</a></h4>
+                    <button>Okay</button>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="login">
+            <a href="index.html">
+                <img src="../public/assets/image/navlogo.png" alt="">
+            </a>
+            <div class="user">
+                <form action="/login" method="post">
+                    <div class="form">
+                        <img src="../public/assets/image/icon3.png" alt="">
+                        <input type="email" name="email" placeholder="Your e-mail">
+                    </div>
+                    <div class="form">
+                        <img src="../public/assets/image/icon5.png" alt="">
+                        <input type="text" name="password" placeholder="Password">
+                    </div>
+                    <div class="sign">
+                        <h4 class="clr">Register</h4>
+                        <button type="submit">Sign In</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="with">
+                <h4>Login with</h4>
+                <ul>
+                    <li><a href=""><img src="../public/assets/image/fb.jpg" alt=""></a></li>
+                    <li><a href=""><img src="../public/assets/image/github.png" alt=""></a></li>
+                    <li><a href=""><img src="../public/assets/image/instagram1.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="image">
+            <img class="menu" src="../public/assets/image/icon8.png" alt="">
+            <ul>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Faq</a></li>
+                <li><a href="">Our Service</a></li>
+                <li><a href="">Premium Member</a></li>
+            </ul>
+            <span></span>
+            <span></span>
+            <h4 class="text">Try make blog history of</h4>
+            <h1 class="lrg-text">Chinese</h1>
+            <div class="text-disc">
+                <img src="../public/assets/image/icon7.png" alt="">
+                <div class="text">
+                    <h4>Make Your Own Post </h4>
+                    <h1>More Attractive</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../public/assets/js/sc_login.js"></script>
+    <script src="../public/assets/js/failed.js"></script>
+</body>
+</html>

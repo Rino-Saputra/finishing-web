@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica,sans-serif;
+    padding: 5%;
+    background: linear-gradient(to bottom right,rgb(163, 156, 213),rgba(210, 211, 182, 0.693));
+    animation: anm1 2s ease;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(134, 83, 255);
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+    border-style: none;
+}
+
+::placeholder {
+    opacity: 0.5;
+}
+
+/*  */
+
+.container {
+    display: flex;
+    max-width: 1200;
+}
+
+.login {
+    padding: 20px;
+    color: rgb(90, 90, 90);
+    background-color: white;
+    margin-left: 10%;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 2px 2px 20px rgb(223, 218, 255);
+}
+
+.login img {
+    width: 29px;
+}
+
+.login .user {
+    padding: 100px 20px;
+}
+
+.login .user .form {
+    display: flex;
+    padding: 1em;
+    border: 2px solid rgb(138, 138, 138);
+    margin: 0.6em 0;
+    border-radius: 11px;
+}
+
+.form img {
+    width: 9%;
+    margin-right: 0.6em;
+}
+
+.sign {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    align-items: center;
+}
+
+.sign h4 {
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.sign button {
+    padding: 1.2em;
+    outline: none;
+    border-style: none;
+    background-color: #a984ff;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.with {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding: 0 20px;
+}
+
+.with ul {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.image {
+    color: white;
+    padding: 20px 290px 20px 60px;
+    /* background: rgb(92, 116, 249) url(image/bg2.png) no-repeat ;  */
+    background-image: url(../image/bg2.png);
+    background-size: cover;
+    text-shadow: 1px 1px 10px black;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 2px 2px 20px rgb(223, 218, 255);
+    position: relative;
+    transition: 1s ease;
+}
+
+.menu {
+    z-index: 100;
+    display: block;
+    margin: 0 0 20px 160%;
+    position: relative;
+    cursor: pointer;
+}
+
+.image span {
+    display: inline-block;
+    height: 2px;
+    width: 40px;
+    background-color: white;
+    margin-bottom: 100px;
+}
+
+.text-disc{
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.text-disc img {
+    margin-right: 1em;
+}
+
+.image ul {
+    height: 100%;
+    text-shadow: none;
+    font-weight: 850;
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 10em;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(16px);
+    font-size: 12px;
+    border-radius: 10px;
+    z-index: 99;
+    opacity: 0;
+    transition: 0.6s ease;
+}
+
+.image ul a {
+    color: rgb(255, 254, 211);
+}
+
+button:hover {
+    background-color: #a4deff;
+}
+
+a:hover {
+    color: #a4deff;
+}
+
+.login .clr:hover {
+    color: #a4deff;
+}
+
+.image .change {
+    background-color: rgb(20, 60, 20);
+}
+/* modal box */
+.modal-box {
+    z-index: 100;
+    background-color: rgba(24, 17, 17,0.55);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 2em;
+    position: fixed;
+    align-items: center;
+    display: none;
+    animation: anm1 0.6s ease;
+}
+
+.modal-content {
+    background-color: white;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 10px;
+    color: rgba(53, 50, 50, 0.844);
+    box-shadow: 5px 5px 29px rgba(0, 0, 0, 0.46);
+}
+
+.modal-content #close {
+    font-size: 1.5rem;
+    padding: 0.1em 0.4em 0.2em 0.4em;
+    margin-left: 90%;
+    color: #292929;
+    cursor: pointer;
+}
+
+.modal-content h1 {
+    color: rgb(59, 55, 63);
+    margin: 1em 0;
+}
+
+.input-cnt {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 1em 0 1em 10%;
+    border-bottom: 2px solid rgba(169, 132, 255, 0.508);;
+}
+
+.input-cnt img {
+    width: 29px;
+    height: 29px;
+}
+
+.modal-content .input-cnt input {
+    padding: 1em;
+    width: 100%;
+    outline: none;
+    border-style: none;
+}
+
+.check label {
+    font-size:12px;
+    margin: 0;
+}
+.check input {
+    margin-left: -22%;
+}
+
+label span {
+    color: rgb(169, 132, 255);
+}
+
+.agree {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 2.5em;
+    align-items: center;
+}
+
+.agree button {
+    padding: 1em 2.9em;
+    border-style: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(169, 132, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.agree a {
+    text-decoration: none;
+    color: rgba(53, 50, 50, 0.844);;
+    font-size:12px;
+}
+
+/* failed login */
+.failed-login{
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(24, 17, 17,0.55);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.failed-content{
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#close-txt{
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
+.failed-content img{
+    border-radius: 20px 0 0 20px;
+}
+
+.failed-message h1{
+    color: rgb(104, 42, 250);
+    padding: 1em 0;
+}
+
+.failed-message h4{
+    font-size: 0.9rem;
+    line-height: 2em;
+}
+
+.failed-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    color: rgb(71, 70, 70)
+}
+
+.failed-message button{
+    padding: 0.5em 2.9em;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(169, 132, 255);
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    transition: 0.6s ease;
+}
+
+.cont-strong{
+    padding-bottom: 10px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cont-strong .strong{
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    margin-right: 10px;
+    background-color: rgb(247, 144, 47);
+}
+
+::placeholder {
+    opacity: 0.6;
+}
+
+.agree button:hover {
+    background-color: rgb(111, 49, 255);
+}
+
+.agree a:hover {
+    color: rgb(111, 49, 255);
+}
+.failed-message button:hover{
+    transform: scale(1.1);
+}
+#close-txt:hover{
+    opacity: 0.5;
+}
+
+@keyframes anm1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* @media (max-width:1000px){
+    body {
+        display: none;
+    }
+} */
+
+/* olor 
+#A9DEFC
+*/

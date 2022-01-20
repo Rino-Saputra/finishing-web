@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Creating Blog Page - detail</title>
+    <link rel="stylesheet" href="../public/assets/css/styleblog.css" />
+    <link rel="stylesheet" href="../public//assets/css/nav-style.css">
+  </head>
+  <body>
+    <!-- NavBar -->
+    <div class="container"> 
+      <nav class="nav">
+        <div class="left-side">
+          <a href="index.html">
+            <img src="../public/assets/image/logo.png" alt="logo" />
+          </a>
+          <ul>
+            <li>
+              <a href="/" class="home">Home</a>
+            </li>
+            <li>
+              <a href="/blog" class="list-active">Blog</a>
+            </li>
+          </ul>
+        </div>
+        <div class="right-side">
+          {{#if isLogin}}
+              <a href="/profil" class="list-active">{{user.name}}</a>
+              <a href="/profil"><img src="../public/assets/image/icon3.png" alt=""></a>
+              <a href="/form" id="form"> Contact Me </a>
+            {{else}}
+                <a href="/login">Login</a>
+          {{/if}}
+        </div>
+      </nav>
+
+      <!-- Blog -->
+      <div class="blog-detail">
+        <div class="blog-detail-container">
+          <h1>{{blog.title}}</h1>
+          <div class="author">{{now}} | {{ blog.author}}</div>
+          <img src="../uploads/{{blog.image}}" width="200" alt="detail" />
+          <p>
+            {{blog.content}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

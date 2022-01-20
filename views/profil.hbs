@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/assets/css/profil.css">
+    <link rel="stylesheet" href="../public/assets/css/nav-style.css">
+</head>
+<body>
+    <div class="circle2"></div>
+    <div class="circle4"></div>
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    {{#if messages.active}}
+        <div class="failed-login">
+            <div class="failed-content">
+                <span id="close-txt">X</span>
+                <img src="../public/assets/image/failed.png" alt="">
+                <div class="failed-message">
+                    <h1 class="head-txt">
+                      {{#if messages.failed}}!!Ooooooppsssss{{/if}}
+                      {{#if messages.success}}!!Congratss{{/if}}
+                    </h1>
+                    <h4>
+                      {{#if messages.failed}}{{messages.failed}}{{/if}}
+                      {{#if messages.success}}{{messages.success}}{{/if}}
+                    </h4>
+                    <h4>{{#if messages.failed}}Dont have account?{{/if}} <a href="" class="register">{{#if messages.failed}} register now{{/if}}</a></h4>
+                    <button>Okay</button>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+    <nav class="nav">
+        <div class="left-side">
+          <a href="index.html"><img src="../public/assets/image/logo.png" alt="logo" /></a>
+            <ul>
+                <li>
+                    <a href="/" class="home">Home</a>
+                </li>
+                <li>
+                    <a href="/blog" class="list-active">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right-side">
+            <a href="/profil">{{user.name}}</a>
+            <a href="/profil"><img src="../public/assets/image/icon3.png" alt=""></a>
+          <a href="from.html"> Contact Me </a>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="text-field">
+            <h4>Your Blog</h4>
+            <h4 class="account">Account Detail</h4>
+        </div>
+        
+        <div class="setting-field">
+            <div class="head-field">
+                <h4>Go back</h4>
+                <h2>Account Setting</h2>
+            </div>
+            
+            <div class="data-field">
+                <div class="main-data">
+                    <div class="hero">
+                        <img src="../public/assets/image/icon3.png" alt="">
+                        <label for="img" class="label-img">
+                            change
+                        </label>
+                    </div>
+                    <div class="edit-delete">
+                        <form action="profil/{{user.id}}" method="post" enctype="multipart/form-data">
+                            <input type="file" name="image" class="image-label" id="img">
+                            <div class="name input-cnt">
+                                <div class="image-name"></div>
+                                <input type="text" value="{{user.name}}" name="name" placeholder="Username">
+                                <img src="../public/assets/image/pen.png" alt="">
+                            </div>
+        
+                            <div class="email input-cnt">
+                                <input type="email" value="{{user.email}}" name="email" placeholder="Email">
+                                <img src="../public/assets/image/pen.png" alt="">
+                            </div>
+        
+                            <div class="pw input-cnt">
+                                <input type="password" name="password" placeholder="Your change password">
+                                <img src="../public/assets/image/pen.png" alt="">
+                            </div>
+                            <button type="submit" class="submit">Change</button>
+                        </form>
+                        <div class="delete">
+                            <div class="template">
+                                <h4>Tired with basic template</h4>
+                                <h4 class="transparent">Try our premium template</h4>
+                                <h4>$29/month</h4>
+                                <button>Try Template</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="end-content">
+                    <div class="image">
+                        <img src="../public/assets/image/ss1.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <h1 class="clr">Get our meetup in bandung</h1>
+                        <h4>March 25th-May 8th</h4>
+                    </div>
+                    <button>Join now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/assets/js/sc_login.js"></script>
+    <script src="../public/assets/js/failed.js"></script>
+</body>
+</html>

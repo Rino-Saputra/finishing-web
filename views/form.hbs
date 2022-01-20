@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>day 2</title>
+        <link rel="stylesheet" href="../public/assets/css/formstyle.css">
+    </head>
+    <body>
+        <nav>
+            <div class="left">
+                    <img src="../public/assets/image/navlogo.png" alt="logo">
+                    <ul>
+                        <li><a href="/" class="home">Home</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+            </div>
+            <div class="right">
+                {{#if isLogin}}
+                    <a href="/profil" class="list-active">{{user.name}}</a>
+                    <a href="/profil"><img src="../public/assets/image/icon3.png" alt=""></a>
+                    <a href="#">Contact Me</a>
+                    {{else}}
+                    <a href="/login">Login</a>
+                {{/if}}
+            </div>
+        </nav>
+
+        <div class="form-container">
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="circle5"></div>
+            <div class="circle6"></div>
+            <div class="circle"></div>
+            <div class="circle2"></div>
+            <div class="square"></div>
+            <form action="">
+                <div class="cont-input">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" class="inp-to-style">
+                </div>
+                <div class="cont-input">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" class="inp-to-style">
+                </div>
+                <div class="cont-input">
+                    <label for="phone">Phone number</label>
+                    <input id="phone" type="number" class="inp-to-style">
+                </div>
+                <div class="cont-input">
+                    <label for="sub">Subject</label>
+                    <select name="" id="sub" class="inp-to-style">
+                        <option>privacy</option>
+                        <option>hire me</option>
+                    </select> 
+                </div>
+                <div>
+                    <label for="" class="gender">Gender</label>
+                    <input type="radio" value="male" name="gender">
+                    <label for="html">Male</label>
+                    <input type="radio" value="female" name="gender">
+                    <label for="css">Female</label>
+                </div>
+                <div class="cont-input">
+                    <label for="text">Text Message</label>
+                    <textarea name="" id="text" cols="10" rows="10" class="inp-to-style"></textarea>
+                    <button type="button" onclick="submitData()" class="btn-sub">submit</button>
+                </div>
+            </form>
+        </div>
+        
+        <script src="./form.js"></script>
+        
+    </body>
+</html>

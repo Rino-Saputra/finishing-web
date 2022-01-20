@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap');
+
+nav {
+    display: flex;
+    position: relative;
+    background: #f4f3f3;
+    height: 7vh;
+    z-index: 20;
+    font-weight: 850;
+    transition: 0.6s ease;
+  }
+
+  nav .right-side img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid white;
+      margin: 0 1em;
+  }
+
+  .nav .right-side a{
+    text-decoration: none;
+    color: #412316;;
+  }
+  
+  nav div {
+    display: flex;
+    align-items: center;
+    flex: 50%;
+  }
+  
+  nav div.left-side {
+    padding-left: 90px;
+  }
+  
+  nav div.right-side {
+    padding-right: 90px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin-left: 40px;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-left: 40px;
+  }
+  
+  nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    transition: 0.25s ease;
+  }
+  
+  nav ul li a.list-active {
+    font-weight: 700;
+  }
+  
+  nav .right-side #form {
+    font-size: 15px;
+    padding: 8px 20px;
+    background-color: #ec4d37;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.25s ease;
+    margin-left: 10px;
+  }
+  .nav{
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid white;
+    padding: 2em 0;
+  }
+  .burger{
+    position: relative;
+    z-index: 100;
+    width: 40px;
+    height: 32px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 85%;
+  }
+  .burger span{
+    display: inline-block;
+    height: 4px;
+    width: 40px;
+    background-color: rgb(169, 132, 255);
+    transition: 0.6s ease;
+  }
+  
+  nav .home{
+    color: #412316;
+    opacity: 0.5;
+  }
+  
+  nav ul li a.list-active {
+    color: #412316;
+    border-bottom: 1px solid #412316;
+    padding-bottom: 4px;
+  }
+  
+  nav .right-side #form{
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background-color: pink;
+    border-top: 2.9px solid white;
+    border-left: 2.9px solid white;
+    border-right: 2.9px solid white;
+    color: #412316;
+  }
+
+  
+
+  @media(min-width:590px) and (max-width:840px){
+    nav .right-side a{
+      border-top: 1px solid white;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+    }
+    nav div.left-side {
+      padding-left: 19px;
+    } 
+    nav div.right-side {
+      padding-right: 19px;
+    }
+  }
+  
+  @media(max-width:588px){
+    nav{
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255,255,255,0.2);
+      backdrop-filter: blur(50px);
+      border: 0.8px solid white;
+      border-radius: 10px;
+      z-index: 99;
+      margin-right: -999px;
+      opacity: 0;
+    }
+    .burger{
+      display: flex;
+    }
+    nav div.left-side {
+      padding-left: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    } 
+    nav div.right-side {
+      padding-right: 0;
+    }
+    nav ul{
+      display: flex;
+      flex-direction: column;
+      margin-left: -40px;
+      justify-content: space-between;
+      height: 40%;
+    }
+  }

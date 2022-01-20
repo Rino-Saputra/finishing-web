@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Creating Blog Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/assets/css/styleblog.css" />
+    <link rel="stylesheet" href="../public/assets/css/nav-style.css">
+  </head>
+  <body>
+  <div class="container">
+    <!-- NavBar -->
+    <div class="head-circle"></div>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+     <nav class="nav">
+      <div class="left-side">
+        <a href="index.html">
+          <img src="../public/assets/image/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li>
+            <a href="/" class="home">Home</a>
+          </li>
+          <li>
+            <a href="/blog" class="list-active">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-side">
+        {{#if isLogin}}
+            <a href="/profil" class="list-active">{{user.name}}</a>
+            <a href="/profil"><img src="../public/assets/image/icon3.png" alt=""></a>
+            <a href="/form" id="form"> Contact Me </a>
+          {{else}}
+              <a href="/login">Login</a>
+        {{/if}}
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+      <div class="square"></div>
+      <div class="blog-form">
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <!-- <div class="square"></div> -->
+        <div class="form-container">
+          <form action="/edit-blog/{{id}}" method="post" enctype="multipart/form-data">
+            <h1>Edit Blog</h1>
+            <div>
+              <label for="input-blog-title">Title</label>
+              <input id="input-blog-title" name="title" value="{{getTitle}}" placeholder="Your Title"/>
+            </div>
+            <div>
+              <label for="input-blog-content">Content</label>
+              <textarea id="input-blog-content" name="content" placeholder="Your Content">{{getContent}}</textarea>
+            </div>
+            <div>
+              <label>Upload Image</label>
+              <div class="input-blog-image-group">
+                <label for="input-blog-image">
+                  <p>Attach File</p>
+                  <img src="../public/assets/image/file.png" alt="file" />
+                </label>
+                <input type="file" name="image" id="input-blog-image" hidden />
+              </div>
+            </div>
+            <div class="button-group">
+              <button>Save change</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../public/assets/js/blog.js"></script>
+  </body>
+</html>

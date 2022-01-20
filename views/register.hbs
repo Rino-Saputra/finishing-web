@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-sm">
+          <a class="navbar-brand" href="#"><img src="../public/assets/image/navlogo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-orange" aria-current="page" href="/blog">Blog</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/register">Register</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active text-orange" aria-current="page" href="/login">Login</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn px-2 text-white bg-orange" type="submit">Contact Me</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container-fluid d-flex align-items-center justify-content-center">
+        <div class="container-form">
+            <p class="h1 text-center mb-5">Register</p>
+          
+            <form action="/register" method="post">
+                <div class="mb-3">
+                  <label for="title" class="form-label">Name</label>
+                  <input type="text" name="userName" class="form-control" id="name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="title" class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="title" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" id="password" aria-describedby="emailHelp">
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn bg-orange text-white brd">Register</button>
+                </div>         
+              </form>
+        </div>
+    </div>
+</body>
+<script src="../public/assets/bootstrap/js/bootstrap.min.js"></script>
+</html>

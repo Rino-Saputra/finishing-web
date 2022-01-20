@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/assets/css/styleblog.css" />
+    <link rel="stylesheet" href="../public/assets/css/nav-style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- NavBar -->
+    <div class="head-circle"></div>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+     <nav class="nav">
+      <div class="left-side">
+        <a href="index.html">
+          <img src="../public/assets/image/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li>
+            <a href="/" class="home">Home</a>
+          </li>
+          <li>
+            <a href="/blog" class="list-active">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-side">
+        {{#if isLogin}}
+            <a href="/profil" class="list-active">{{user.name}}</a>
+            <a href="/profil"><img src="../public/assets/image/icon3.png" alt=""></a>
+            <a href="/form" id="form"> Contact Me </a>
+          {{else}}
+              <a href="/login">Login</a>
+        {{/if}}
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+      <div class="square"></div>
+      <div class="blog-form">
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <!-- <div class="square"></div> -->
+        <div class="form-container">
+          <form action="/blog" method="post" enctype="multipart/form-data">
+            <h1>Edit Blog</h1>
+            <div>
+              <label for="input-blog-title">Title</label>
+              <input id="input-blog-title"  name="title" placeholder="Your Title"/>
+            </div>
+            <div>
+              <label for="input-blog-content">Content</label>
+              <textarea id="input-blog-content"  name="content" placeholder="Your Content">{{getContent}}</textarea>
+            </div>
+            <div>
+              <label>Upload Image</label>
+              <div class="input-blog-image-group">
+                <label for="input-blog-image">
+                  <p>Attach File</p>
+                  <img src="../public/assets/image/file.png" alt="file" />
+                </label>
+                <input type="file" name="image" id="input-blog-image" hidden />
+              </div>
+            </div>
+            <div class="button-group">
+              <button type="submit">Post blog</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    {{!-- <div class="container-fluid d-flex align-items-center justify-content-center">
+        <div class="container-form">
+            <p class="h1 text-center mb-5">Create Post Blog</p>
+          
+            <form action="/blog" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" name="title" class="form-control" id="title" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea class="form-control" name="content" id="content" rows="8"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input class="form-control" name="image" type="file" id="image">
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn bg-orange text-white brd">Post Blog</button>
+                </div>         
+              </form> --}}
+</body>
+<script src="../public/assets/js/blog.js"></script>
+</html>

@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Creating Blog Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public//assets/css/styleblog.css" />
+    <link rel="stylesheet" href="../public/assets/css/nav-style.css">
+  </head>
+  <body>
+  <div class="container">
+    <!-- NavBar -->
+    <div class="head-circle"></div>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav">
+      <div class="left-side">
+        <a href="index.html">
+          <img src="../public/assets/image/logo.png" alt="logo" />
+        </a>
+        <ul>
+          <li>
+            <a href="/" class="home">Home</a>
+          </li>
+          <li>
+            <a href="/blog" class="list-active">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-side">
+        {{#if isLogin}}
+            <a href="/profil" class="list-active">{{user.name}}</a>
+            <a href="/profil"><img src="../public/assets/image/icon3.png" alt=""></a>
+            <a href="/form" id="form"> Contact Me </a>
+          {{else}}
+              <a href="/login">Login</a>
+        {{/if}}
+      </div>
+    </nav>
+
+    <!-- Blog -->
+    <!-- Form -->
+    <div class="blog">
+      <hr class="line" />
+      <div class="add-buble">
+        <div id="contents" class="blog-list">
+          {{#if isLogin}}
+            <a href="/addblog" class="add-blog">Add blog</a>
+          {{/if}}
+          <!-- dynamic content would be here -->
+          {{#each blogCont}}
+            <div class="blog-list-item">
+              <div class="blog-image">
+                <img src="../uploads/{{this.image}}" alt="" />
+              </div>
+              <div class="blog-buble"></div>
+              <div class="blog-buble2"></div>
+              <div class="blog-content">
+                {{#if isAdmin}}
+                <div class="btn-group">
+                  <a class="btn-edit" href="delete-blog/{{this.id}}">Delete Post</a>
+                  <a class="btn-post" href="edit-blog/{{this.id}}">Edit Blog</a>
+                </div>
+                {{/if}}
+                <h1>
+                  <a href="/blog-detail/{{this.id}}" target="_blank"
+                    >{{this.title}}</a
+                  >
+                </h1>
+                <div class="detail-blog-content">
+                  {{this.timeShow}} | {{this.author}}
+                </div>
+                <p class="text-cntn">
+                  {{this.content}}
+                </p>
+                <div class="time">
+                  <p>{{this.distanceTime}}</p>
+                </div>
+              </div>     
+            </div>
+          {{/each}}
+
+        </div>
+      </div><!--buble-->
+    </div>
+  </div>
+  <script src="blog.js"></script>
+  </body>
+</html>

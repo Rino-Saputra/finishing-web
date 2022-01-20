@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>day 3 navbar</title>
+        <link rel="stylesheet" href="../public/assets/css/formstyle.css">
+    </head>
+    <body>
+        <nav>
+            <div class="left">
+                <img src="../public/assets/image/navlogo.png" alt="logo">
+                <ul>
+                    <li><a href="" class="home">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                {{#if isLogin}}
+                    <a href="/register" class="list-active">{{user.name}}</a>
+                    <a href=""><img src="../public/assets/image/icon3.png" alt=""></a>
+                    <a href="/form" id="from">Contact Me</a>
+                    {{else}}
+                    <a href="/login">Login</a>
+                {{/if}}
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="circle5"></div>
+            <div class="circle6"></div>
+            <div class="circle"></div>
+            <div class="circle2"></div>
+            <div class="square"></div>
+            <section>
+                <div class="left-sec">
+                    <div class="card">
+                        <img src="../public/assets/image/ss2.jpg">
+                        <h1>Rino Saputra</h1>
+                        <p>i want to become web developer with full loyality and i dont have idea next word</p>
+                        <div class="another-skill">
+                            <h4>Skills:</h4>
+                            <img src="../public/assets/image/html.png" alt="">
+                            <img src="../public/assets/image/css3.png" alt="">
+                            <img src="../public/assets/image/js2.png" alt="">
+                            <img src="../public/assets/image/node1.png" alt="">
+                            <img src="../public/assets/image/react1.png" alt="">
+                            <img src="../public/assets/image/sql.png" alt="">
+                        </div>
+                        <table border="1" cellpadding='10'>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>year</th>
+                            </tr>
+                            {{#each data}}
+                            <tr>
+                                <td>{{this.project}}</td>
+                                <td>{{this.year}}</td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="right-sec">
+                    <h1 class="to-strong">What I Do</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem suscipit itaque tenetur est reiciendis! Omnis eius repudiandae natus nobis expedita sit, vero earum inventore architecto dignissimos asperiores 
+                        ipsum, dolor sit amet consectetur adipisicing elit. Quis similisaepe velit nesciunt.</p>
+                    <div class="skill-cont">
+                        <div class="first skill">
+                            <img src="../public/assets/image/js.png" alt="">
+                            <h4 class="to-strong">Frontend Developer</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur et consequuntur iste in autem expedita officia at minima facere, dicta commodi veritatis dolor delectus totam doloribus quos nam quam!</p>
+                        </div>
+                        <div class="second skill">
+                            <img src="../public/assets/image/github.png" alt="">
+                            <h4 class="to-strong">Version Control</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur et consequuntur iste in autem expedita officia at minima facere, dicta commodi veritatis dolor delectus totam doloribus quos nam quam!</p>
+                        </div>
+                        <div class="third skill">
+                            <img src="../public/assets/image/favicon.ico" alt="">
+                            <h4 class="to-strong">Automated Deployement</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur et consequuntur iste in autem expedita officia at minima facere, dicta commodi veritatis dolor delectus totam doloribus quos nam quam!</p>
+                        </div>
+                    </div>
+                    <footer>
+                        <h1>Found Me On</h1>
+                        <a href="https://web.facebook.com/sojli.monika.52493/"><img src="../public/assets/image/fb.jpg" alt=""></a> 
+                        <a href="mailto:rinosaputra133@gmail.com?subject&body"><img src="../public/assets/image/email.png" alt=""></a> 
+                        <a href="https://t.me/Rino_Saputra1"><img src="../public/assets/image/telegram.png" alt=""></a> 
+                        <a href="https://www.instagram.com/axe_axton"><img src="../public/assets/image/instagram1.png" alt=""></a> 
+                        <a href="https:/wa.me/623110714321"><img src="../public/assets/image/whatapp1.png" alt=""></a> 
+                    </footer>
+                </div>
+            </section>
+
+        </div>
+        <script src="./form.js"></script>
+    </body>
+</html>
